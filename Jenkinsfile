@@ -35,7 +35,7 @@ pipeline {
             steps{
                 sh '''
                     
-                    docker run -it -d --name c1 -p 9002:8080 9c726d3c2f8f
+                    docker run -it -d --name c1 -p 9002:8080 jango
                 '''
             }
         }
