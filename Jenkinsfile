@@ -51,7 +51,7 @@ pipeline {
         }
         stage('Pushing image to repository'){
             steps{
-                sh 'docker push AKASHBE30/test-1'
+                sh 'docker push AKASHBE30/test-1:1'
             }
         }
     }
