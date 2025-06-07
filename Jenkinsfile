@@ -22,12 +22,12 @@ pipeline {
         }
         stage('Build and Tag Docker file'){
             steps{
-                sh "docker build -t AKASHBE30/test-1 ."
+                sh "docker build -t AKASHBE30/test-1:1 ."
             }
         }
         stage('Docker image scan'){
             steps{
-                 sh "trivy image --format table -o trivy-image-report.html AKASHBE30/test-1"
+                 sh "trivy image --format table -o trivy-image-report.html AKASHBE30/test-1:1"
             }
         }
 
