@@ -35,7 +35,7 @@ pipeline {
             steps{
                 sh '''
                     
-                    docker run -it -d --name c1 -p 9002:8080 AKASHBE30/test-1
+                    docker run -it -d --name c1 -p 9002:8080  f1f14413dcf6
                 '''
             }
         }
