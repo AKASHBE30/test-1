@@ -27,8 +27,8 @@ pipeline {
         }
         stage('Docker image scan'){
             steps{
-                 '''sh "trivy image --format table -o trivy-image-report.html  akashbe30/java"'''
-                trivy image --format template --template "@contrib/html.tpl" -o trivy-image-report.html akashbe30/java
+                 sh "trivy image --format table -o trivy-image-report.html  akashbe30/java"
+        
 
             }
         }
