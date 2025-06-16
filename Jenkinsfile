@@ -28,8 +28,6 @@ pipeline {
         stage('Docker image scan'){
             steps{
                  sh "trivy image --format table -o trivy-image-report.html  akashbe30/java"
-        
-
             }
         }
 
