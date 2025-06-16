@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Docker image scan'){
             steps{
-                 sh "trivy image --format table -o trivy-image-report.html  akashbe30/java"
+                 sh "trivy image --skip-update --timeout 5m  --format table -o trivy-image-report.html  akashbe30/java"
             }
         }
 
