@@ -22,12 +22,12 @@ pipeline {
         }
         stage('Build and Tag Docker file'){
             steps{
-                sh "docker build -t akashbe30/java ."
+                sh "docker build -t akashbe30/java1 ."
             }
         }
         stage('Docker image scan'){
             steps{
-                 sh "trivy image --skip-update --timeout 5m --format table -o trivy-image-report.html  akashbe30/java"
+                 sh "trivy image --format table -o trivy-image-report.html  akashbe30/java1"
             }
         }
 
@@ -36,7 +36,7 @@ pipeline {
                 sh '''
                     docker stop c1
                     docker rm c1
-                    docker run -it -d --name c1 -p 9002:8080 akashbe30/java
+                    docker run -it -d --name c1 -p 9002:8080 akashbe30/java1
                 '''
             }
         }
@@ -52,7 +52,7 @@ pipeline {
         }
         stage('Pushing image to repository'){
             steps{
-                sh 'docker push akashbe30/java'
+                sh 'docker push akashbe30/java1'
             }
         }
     }
